@@ -1,0 +1,8 @@
+-------------------------------------------------------------------------------
+Test set: uk.ac.ed.inf.OrderValidatorTest
+-------------------------------------------------------------------------------
+Tests run: 3500, Failures: 1, Errors: 0, Skipped: 0, Time elapsed: 1.739 s <<< FAILURE! - in uk.ac.ed.inf.OrderValidatorTest
+testCreditCardCVV3Digits[21]  Time elapsed: 0.001 s  <<< FAILURE!
+junit.framework.AssertionFailedError: expected:<INVALID> but was:<VALID_BUT_NOT_DELIVERED>
+	at uk.ac.ed.inf.OrderValidatorTest.testCreditCardCVV3Digits(OrderValidatorTest.java:330)
+
