@@ -126,17 +126,6 @@ public class LngLatHandlerTest {
         LngLat expectedPosition = new LngLat(x,y);
 
         assertTrue(expectedPosition.equals(endPosition));
-        //assertEquals(endPosition.lng(), expectedPosition.lng());
-        //assertEquals(endPosition.lat(), expectedPosition.lat());
-
-        // double newLng = lng + (Math.cos(angle) * SystemConstants.DRONE_MOVE_DISTANCE);
-        // double newLat = lat + (Math.sin(angle) * SystemConstants.DRONE_MOVE_DISTANCE);
-
-        // LngLat expectedPosition = new LngLat(newLng, newLat);
-
-        // double delta = 0.00015;
-        // assertEquals("msg", expectedPosition.lng(), endPosition.lng(), delta);
-        // assertEquals("msg", expectedPosition.lat(), endPosition.lat(), delta);
     }
 
     @Test

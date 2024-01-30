@@ -127,21 +127,21 @@ public class AppTest {
         assertTrue(timeElapsed < 60000);
     }
 
-    // @Test
-    // public void averageRunTime() {
-    //     String[] args = {"2023-11-15", "https://ilp-rest.azurewebsites.net"};
-    //     int totalTime = 0;
-    //     boolean bool = true;
-    //     for (int i = 0; i < 100; i++) {
-    //         long startTime = System.currentTimeMillis();
-    //         App.main(args);
-    //         long endTime = System.currentTimeMillis();
-    //         long timeElapsed = endTime - startTime;
-    //         totalTime += timeElapsed;
-    //     }
-    //     System.out.println(totalTime / 100);
-    //     assertTrue(bool);
-    // }
+    @Test
+    public void averageRunTime() {
+        String[] args = {"2023-11-15", "https://ilp-rest.azurewebsites.net"};
+        int totalTime = 0;
+        boolean bool = true;
+        for (int i = 0; i < 100; i++) {
+            long startTime = System.currentTimeMillis();
+            App.main(args);
+            long endTime = System.currentTimeMillis();
+            long timeElapsed = endTime - startTime;
+            totalTime += timeElapsed;
+        }
+        System.out.println(totalTime / 100);
+        assertTrue(bool);
+    }
 
     @Test
     public void testCorrectFilesCreated() {
