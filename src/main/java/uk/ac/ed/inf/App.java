@@ -24,23 +24,27 @@ public class App
     public static void main(String[] args) {
 
         // checks to ensure the program runs correctly with expected input arguments
-        if (args.length != 2) {
-            System.err.println("Incorrect number of arguments. Expected 2, got " + args.length);
-            System.exit(1);
-        }
+        // if (args.length != 2) {
+        //     System.err.println("Incorrect number of arguments. Expected 2, got " + args.length);
+        //     System.exit(1);
+        // }
 
-        if (!validDate(args[0])) {
-            System.err.println("Incorrect date format. Expected YYYY-MM-DD, got " + args[0]);
-            System.exit(1);
-        }
+        // if (!validDate(args[0])) {
+        //     System.err.println("Incorrect date format. Expected YYYY-MM-DD, got " + args[0]);
+        //     System.exit(1);
+        // }
 
-        if (!validURL(args[1])) {
-            System.err.println("Incorrect URL format. Expected a valid URL, got " + args[1]);
-            System.exit(1);
-        }
+        // if (!validURL(args[1])) {
+        //     System.err.println("Incorrect URL format. Expected a valid URL, got " + args[1]);
+        //     System.exit(1);
+        // }
 
-        if (!RestReader.getIsAlive(args[1])) {
-            System.err.println("The server is not alive. Expected a valid URL, got " + args[1]);
+        // if (!RestReader.getIsAlive(args[1])) {
+        //     System.err.println("The server is not alive. Expected a valid URL, got " + args[1]);
+        //     System.exit(1);
+        // }
+
+        if (!checkArguments(args)) {
             System.exit(1);
         }
 
@@ -160,6 +164,40 @@ public class App
                 System.err.println("Invalid URL: \n" + e);
                 return false;
             }
+        }
+        return false;
+    }
+
+    private static boolean checkArguments(String[] args) {
+        if (args.length != 2) {
+            System.err.println("Incorrect number of arguments. Expected 2, got " + args.length);
+            //System.exit(1);
+            return false;
+        }
+
+        if (!validDate(args[0])) {
+            System.err.println("Incorrect date format. Expected YYYY-MM-DD, got " + args[0]);
+            //System.exit(1);
+            return false;
+        }
+
+        if (!validURL(args[1])) {
+            System.err.println("Incorrect URL format. Expected a valid URL, got " + args[1]);
+            //System.exit(1);
+            return false;
+        }
+
+        if (!RestReader.getIsAlive(args[1])) {
+            System.err.println("The server is not alive. Expected a valid URL, got " + args[1]);
+            //System.exit(1);
+            return false;
+        }
+        return true;
+    }
+
+    public static boolean getArgsCheck(String[] args) {
+        if (checkArguments(args)) {
+            return true;
         }
         return false;
     }
